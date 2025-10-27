@@ -3,10 +3,6 @@
 venv/
 __pycache__/
 
-# Project folders not needed on GitHub
-document to compare/
-templates/
-json_files/
 
 # Temporary and build files
 *.pdf
