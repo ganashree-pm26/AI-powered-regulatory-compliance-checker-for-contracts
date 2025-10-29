@@ -80,7 +80,7 @@ if __name__ == "__main__":
             "Data Processing Agreement":"json_files/dpa.json",
             "Joint Controller Agreement": "json_files/jca.json",
             "Controller-to-Controller Agreement":"json_files/c2c.json",
-            "Processor-to-Subprocessor Agreement":"json_files/subprocessor.json",
+            "Processor-to-Subprocessor Agreement":"json_files/subprocessing.json",
             "Standard Contractual Clauses": "json_files/scc.json"
         }
         
