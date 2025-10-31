@@ -68,7 +68,7 @@ def document_type(file):
         try:
             groq_client = Groq(api_key=os.getenv("GROQ_API_KEY_1"))
             response = groq_client.chat.completions.create(
-                model="llama-3.1-70b-versatile",
+                model="openai/gpt-oss-20b",
                 messages=[
                     {"role": "system", "content": "You are a legal document classifier."},
                     {"role": "user", "content": prompt},
@@ -118,7 +118,7 @@ def compare_agreements(unseen_data, template_data):
         try:
             groq_client = Groq(api_key=os.getenv("GROQ_API_KEY_2"))
             response = groq_client.chat.completions.create(
-                model="llama-3.1-70b-versatile",
+                model="openai/gpt-oss-20b",
                 messages=[
                     {"role": "system", "content": "You are an AI legal assistant specialized in contract comparison."},
                     {"role": "user", "content": prompt},
@@ -162,7 +162,7 @@ def risk_score_analysis(result_text):
         try:
             groq_client = Groq(api_key=os.getenv("GROQ_API_KEY_3"))
             response = groq_client.chat.completions.create(
-                model="llama-3.1-70b-versatile",
+                model="openai/gpt-oss-20b",
                 messages=[
                     {"role": "system", "content": "You are an AI compliance risk assessor."},
                     {"role": "user", "content": prompt},

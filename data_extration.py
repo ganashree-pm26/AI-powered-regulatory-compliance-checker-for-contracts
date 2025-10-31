@@ -38,6 +38,7 @@ def Clause_extraction(file):
     """
 
     try:
+        raise
         client = genai.Client(api_key=os.getenv("GEMINI_API_KEY_1"))
         response = client.models.generate_content(
             model="gemini-2.5-flash",
@@ -54,7 +55,7 @@ def Clause_extraction(file):
         try:
             groq_client = Groq(api_key=os.getenv("GROQ_API_KEY_1"))
             response = groq_client.chat.completions.create(
-                model="llama-3.1-70b-versatile",
+                model="openai/gpt-oss-20b",
                 messages=[
                     {"role": "system", "content": "You are a legal clause extractor."},
                     {"role": "user", "content": prompt},
@@ -106,7 +107,7 @@ def Clause_extraction_with_summarization(file):
         try:
             groq_client = Groq(api_key=os.getenv("GROQ_API_KEY_2"))
             response = groq_client.chat.completions.create(
-                model="llama-3.1-70b-versatile",
+                model="openai/gpt-oss-20b",
                 messages=[
                     {"role": "system", "content": "You are a contract summarizer."},
                     {"role": "user", "content": prompt},
@@ -140,7 +141,7 @@ def summarize_clause_text(clause_text):
         try:
             groq_client = Groq(api_key=os.getenv("GROQ_API_KEY_3"))
             response = groq_client.chat.completions.create(
-                model="llama-3.1-70b-versatile",
+                model="openai/gpt-oss-20b",
                 messages=[
                     {"role": "system", "content": "You are a legal clause summarizer."},
                     {"role": "user", "content": prompt},
